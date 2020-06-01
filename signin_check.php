@@ -3,11 +3,12 @@ $uname =$_POST['username'];
 $email =$_POST['email'];
 $pass =$_POST['pass'];
 
-// Create Your Database And Enter Details Like Root Name,Database Name And Password
 $server="localhost";
-$user="root";
+
+// WRITE BELOW YOUR DATABSE USERNAME ,PASSWORD AND DATABASE NAME FOR THIS PROJECT
+$user="";
 $password="";
-$db_name="xx"; 
+$db_name=""; 
 $conn =mysqli_connect($server,$user,$password,$db_name);
 
 
@@ -15,12 +16,12 @@ if($conn){
     if ($uname!=""and $email!=""and $pass!=""){
 
    
-    $query="SELECT email from click2 where email ='$email'";
+    $query="SELECT email from //HERE WRITE TABLE NAME  where email ='$email'";
     $result=mysqli_query($conn,$query);
         $num =mysqli_num_rows($result);
         // echo $num;
         if($num!=1){
-        $query="INSERT INTO click2 VALUES ('$uname','$email','$pass')";
+        $query="INSERT INTO //HERE WRITE TABLE NAME VALUES ('$uname','$email','$pass')";
 
         mysqli_query($conn,$query);
         header('Location:Home_page.php');
